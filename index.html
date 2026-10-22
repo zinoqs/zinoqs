@@ -1,11 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Goal Tracker</title>
+  <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <h1>Hello, World!</h1>
+
+  <header>
+    <h1>Team Goal Tracker</h1>
+    <p>You have all your life to be average, you have today to be great • Target: 01 FEB 2027</p>
+  </header>
+
+  <main class="container" id="team-container">
+    <!-- Member cards will render dynamically here -->
+  </main>
+
+  <p class="last-updated" id="updated-tag"></p>
+    <!-- ABOUT / INFO SECTION -->
+  <section class="member-card" style="margin-top: 4px;">
+    <div class="goals-title" style="margin-bottom: 8px;">About This Tracker</div>
+    <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+        Welcome to our team checkpoint tracker! We are tracking our goals as a collective during our short timeline of 01 FEB 2027. Check-ins occur about every two weeks to monitor progress and keep everyone accountable. Time off is incentivied to those who can achieve their S.M.A.R.T Goals. 
+<br><br>Legend:
+<br><strong>[Names]</strong> are randomly generated for privacy.
+<br><strong>[Checkpoint]</strong> will be every 2 weeks, there is no database being used to store a history this is just a fun tool to show current status. 
+<br><strong>[Verified]</strong> entries are entries where there is a form to vouch completion. (Bench with spotter, Mile with Strava App. Academic varies so this is not impacted by verify)
+<br>This site is prone to not being updated and alarms have been set to remove after inactive use.
+<br>For any updates or questions, reach out to the team lead. 
+    </p>
+  </section>
+  <footer style="text-align: center; font-size: 0.7rem; color: var(--text-muted); margin-top: 32px; opacity: 0.7;">
+      Internal team use only • Updated bi-weekly/when member(s) are available
+  </footer>
+  <script>
+    // =========================================================================
+    // MODULAR DATA SECTION — EDIT THIS ARRAY FOR YOUR BI-WEEKLY CHECK-INS
+    // =========================================================================
+    const LAST_UPDATED = "October 22, 2026";
+
+    const TEAM_DATA = [
+
+
+      {
+        name: "Roman Candle",
+        checkpoint: "Checkpoint 1",
+        isVerified: true,
+        verifiedDate:"01 JAN 2000",
+        benchPress: {
+          current: 0,
+          target: 175
+        },
+        mileTime: {
+          current: "0:00",
+          target: "8:00"
+        },
+        academicGoals: [
+          "Complete A+ & Net+ Certification"
+        ]
+      },
+
+
+
+      {
+        name: "Papa Pain",
+        checkpoint: "Checkpoint 1",
+        isVerified: false,
+        verifiedDate:"01 JAN 2000",
+        benchPress: {
+          current: 0,
+          target: 225
+        },
+        mileTime: {
+          current: "0:00",
+          target: "7:30"
+        },
+        academicGoals: [
+          "Complete A+ & Net+ Certification"
+        ]
+      },
+
+
+
+      {
+        name: "BvK",
+        checkpoint: "Checkpoint 1",
+        isVerified: false,
+        verifiedDate:"01 JAN 2000",
+        benchPress: {
+          current: 0,
+          target: 270
+        },
+        mileTime: {
+          current: "0:00",
+          target: "7:10"
+        },
+        academicGoals: [
+          "Reach a total of 85% of degree plan"
+        ]
+      },
+
+
+
+
+      {
+        name: "AQS",
+        checkpoint: "Checkpoint 1",
+        isVerified: false,
+        verifiedDate:"01 JAN 2000",
+        benchPress: {
+          current: 0,
+          target: 225
+        },
+        mileTime: {
+          current: "0:00",
+          target: "8:00"
+        },
+        academicGoals: [
+          "Complete degree plan"
+        ]
+      },
+
+
+
+      {
+        name: "Kilo Watt",
+        checkpoint: "Checkpoint 1",
+        isVerified: false,
+        verifiedDate:"01 JAN 2000",
+        benchPress: {
+          current: 0,
+          target: 175
+        },
+        mileTime: {
+          current: "0:00",
+          target: "8:00"
+        },
+        academicGoals: [
+          "Complete degree plan"
+        ]
+      },
+
+
+
+      {
+        name: "B Dubs",
+        checkpoint: "Checkpoint 1",
+        isVerified: false,
+        verifiedDate:"01 JAN 2000",
+        benchPress: {
+          current: 0,
+          target: 300
+        },
+        mileTime: {
+          current: "0:00",
+          target: "7:10"
+        },
+        academicGoals: [
+          "Complete A+ & Net+ Certification"
+        ]
+      }
+    ];
+    // =========================================================================
+
+    function renderCards() {
+      const container = document.getElementById('team-container');
+      container.innerHTML = '';
+
+      TEAM_DATA.forEach(member => {
+        const card = document.createElement('article');
+        card.className = 'member-card';
+
+        const verifiedBadge = member.isVerified
+          ? `<div style="text-align: right;">
+               <span class="badge badge-verified">✓ Verified</span>
+               <div style="font-size: 0.65rem; color: var(--text-muted); margin-top: 2px;">${member.verifiedDate}</div>
+             </div>`
+          : `<span class="badge badge-unverified">Pending</span>`;
+
+        const goalsHTML = member.academicGoals
+          .map(goal => `<li>${goal}</li>`)
+          .join('');
+
+        card.innerHTML = `
+          <div class="member-header">
+            <div class="member-info">
+              <h2 class="member-name">${member.name}</h2>
+              <span class="member-checkpoint">${member.checkpoint}</span>
+            </div>
+            ${verifiedBadge}
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-box">
+              <div class="stat-label">Max Bench</div>
+              <div class="stat-comparison">
+                <div class="stat-row">
+                  <span class="stat-sublabel">Current</span>
+                  <span class="stat-value-current">${member.benchPress.current} <small style="font-size: 0.65rem;">LBS</small></span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-sublabel">Target</span>
+                  <span class="stat-value-target">${member.benchPress.target} <small style="font-size: 0.65rem;">LBS</small></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="stat-box">
+              <div class="stat-label">Mile Time</div>
+              <div class="stat-comparison">
+                <div class="stat-row">
+                  <span class="stat-sublabel">Current</span>
+                  <span class="stat-value-current">${member.mileTime.current}</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-sublabel">Target</span>
+                  <span class="stat-value-target">${member.mileTime.target}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="goals-section">
+            <div class="goals-title">Academic Goals</div>
+            <ul class="goals-list">
+              ${goalsHTML}
+            </ul>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+
+      document.getElementById('updated-tag').innerText = `Last check-in update: ${LAST_UPDATED}`;
+    }
+
+    renderCards();
+  </script>
 </body>
 </html>
