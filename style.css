@@ -202,4 +202,35 @@
       color: var(--text-muted);
       margin-top: 24px;
     }
+	/* SCHEDULE BANNER STYLES */
+	.schedule-banner {
+	  background: rgba(15, 23, 42, 0.7);
+	  border: 1px solid var(--border-color);
+	}
 
+	.schedule-grid {
+	  display: grid;
+	  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+	  gap: 8px;
+	  margin-top: 8px;
+	}
+
+	.schedule-item {
+	  background: rgba(15, 23, 42, 0.6);
+	  padding: 8px 10px;
+	  border-radius: 6px;
+	  border: 1px solid rgba(255, 255, 255, 0.05);
+	  font-size: 0.8rem;
+	  color: var(--text-main);
+	}
+
+	.milestone-item {
+	  border-color: rgba(244, 63, 94, 0.3);
+	  background: rgba(244, 63, 94, 0.05);
+	}
+
+	.schedule-sub {
+	  font-size: 0.7rem;
+	  color: var(--text-muted);
+	  display: inline;
+	}

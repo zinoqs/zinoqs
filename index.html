@@ -3,184 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Team Goal Tracker</title>
+  <title>Team Performance Tracker</title>
   <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
 
   <header>
-    <h1>Team Goal Tracker</h1>
-    <p>There are smurfs in this lobby • Target: 01 FEB 2027</p>
+    <h1>Team Cycle Tracker</h1>
+    <p>Bi-Weekly Fitness & Academic Progress • Target: 01 February 2027</p>
   </header>
 
+  <!-- CYCLE SCHEDULE & EXPLANATION BANNER -->
+  <section class="member-card schedule-banner" style="margin-bottom: 20px;">
+    <div class="goals-title" style="margin-bottom: 8px;">Cycle Schedule & Timeline</div>
+    <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 12px;">
+      Members will train as needed, however, we are required to submit personal bests (Minimum of one Bench PB and mile PB) within each bi-weekly cycle (<strong>15th and 30th</strong> of each month). Monthly milestones (Cycle 3, Cycle 5, Cycle 7) serve as major progress goals.
+    </p>
+    <div class="schedule-grid">
+      <div class="schedule-item">
+        <strong style="color: var(--accent);">Cycle 1:</strong> Oct 30 <span class="schedule-sub">(Start)</span>
+      </div>
+      <div class="schedule-item">
+        <strong style="color: var(--text-main);">Cycle 2:</strong> Nov 15
+      </div>
+      <div class="schedule-item milestone-item">
+        <strong style="color: #f43f5e;">Cycle 3:</strong> Nov 30 <span class="schedule-sub">(Month 1 Goal)</span>
+      </div>
+      <div class="schedule-item">
+        <strong style="color: var(--text-main);">Cycle 4:</strong> Dec 15
+      </div>
+      <div class="schedule-item milestone-item">
+        <strong style="color: #f43f5e;">Cycle 5:</strong> Dec 30 <span class="schedule-sub">(Month 2 Goal)</span>
+      </div>
+      <div class="schedule-item">
+        <strong style="color: var(--text-main);">Cycle 6:</strong> Jan 15
+      </div>
+      <div class="schedule-item milestone-item">
+        <strong style="color: #f43f5e;">Cycle 7:</strong> Jan 30 <span class="schedule-sub">(Final Target)</span>
+      </div>
+    </div>
+  </section>
+
   <main class="container" id="team-container">
-    <!-- Member cards will render dynamically here -->
+    <!-- Rendered dynamically -->
   </main>
 
-  <p class="last-updated" id="updated-tag"></p>
-    <!-- ABOUT / INFO SECTION -->
   <section class="member-card" style="margin-top: 4px;">
     <div class="goals-title" style="margin-bottom: 8px;">About This Tracker</div>
     <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
-        Welcome to our team checkpoint tracker! We are tracking our goals as a collective during our short timeline of 01 FEB 2027. Check-ins occur about every two weeks to monitor progress and keep everyone accountable. Time off is incentivied to those who can achieve their S.M.A.R.T Goals. 
-<br><br>Legend:
-<br><strong>[Names]</strong> are randomly generated for privacy.
-<br><strong>[Checkpoint]</strong> will be every 2 weeks, there is no database being used to store a history this is just a fun tool to show current status. 
-<br><strong>[Verified]</strong> are entries where the following conditions are met
-<br>1) Max Bench AND mile time are updated. 
-<br>2) There must be proof of completion. (Spotter vouches Bench or video, Mile clocked with an app) 
-<br>3) Resets to pending every 2 weeks. 
-<br><br>For any updates or questions, reach out to the team lead. 
+      Welcome to our team performance tracker! We are tracking max bench presses, mile times, and personal academic goals leading up to our final deadline in January 2027.<br>
+      Click any team member's name to view their full progression graph and cycle timeline grid.
     </p>
   </section>
-  <footer style="text-align: center; font-size: 0.7rem; color: var(--text-muted); margin-top: 32px; opacity: 0.7;">
-      Internal team use only • Updated bi-weekly/when member(s) are available
+
+  <p class="last-updated" id="updated-tag"></p>
+
+  <footer style="text-align: center; font-size: 0.7rem; color: var(--text-muted); margin-top: 24px; opacity: 0.7;">
+    Internal team use only • Updated bi-weekly
   </footer>
+
+  <script src="data.js"></script>
   <script>
-    // =========================================================================
-    // MODULAR DATA SECTION — EDIT THIS ARRAY FOR YOUR BI-WEEKLY CHECK-INS
-    // =========================================================================
-    const LAST_UPDATED = "October 23, 2026";
-
-    const TEAM_DATA = [
-
-
-      {
-        name: "Roman Candle",
-        checkpoint: "Checkpoint 1",
-        isVerified: false,
-        verifiedDate:"23 OCT 2026",
-        benchPress: {
-          current: 135,
-          target: 175
-        },
-        mileTime: {
-          current: "0:00",
-          target: "8:00"
-        },
-        academicGoals: [
-          "Complete A+ & Net+ Certification"
-        ]
-      },
-
-
-
-      {
-        name: "Papa Pain",
-        checkpoint: "Checkpoint 1",
-        isVerified: false,
-        verifiedDate:"01 NOV 2026",
-        benchPress: {
-          current: 225,
-          target: 250
-        },
-        mileTime: {
-          current: "0:00",
-          target: "7:30"
-        },
-        academicGoals: [
-          "Complete A+ & Net+ Certification"
-        ]
-      },
-
-
-
-      {
-        name: "BvK",
-        checkpoint: "Checkpoint 1",
-        isVerified: false,
-        verifiedDate:"01 NOV 2026",
-        benchPress: {
-          current: 240,
-          target: 280
-        },
-        mileTime: {
-          current: "0:00",
-          target: "7:10"
-        },
-        academicGoals: [
-          "Reach a total of 85% of degree plan"
-        ]
-      },
-
-
-
-
-      {
-        name: "Front Runner",
-        checkpoint: "Checkpoint 1",
-        isVerified: true,
-        verifiedDate:"23 OCT 2026",
-        benchPress: {
-          current: 175,
-          target: 225
-        },
-        mileTime: {
-          current: "18:28",
-          target: "8:00"
-        },
-        academicGoals: [
-          "Complete degree plan"
-        ]
-      },
-
-
-
-      {
-        name: "Kilo Watt",
-        checkpoint: "Checkpoint 1",
-        isVerified: false,
-        verifiedDate:"01 NOV 2026",
-        benchPress: {
-          current: 135,
-          target: 175
-        },
-        mileTime: {
-          current: "0:00",
-          target: "8:00"
-        },
-        academicGoals: [
-          "Complete degree plan"
-        ]
-      },
-
-
-
-      {
-        name: "Big Wing",
-        checkpoint: "Checkpoint 1",
-        isVerified: true,
-        verifiedDate:"23 OCT 2026",
-        benchPress: {
-          current: 280,
-          target: 300
-        },
-        mileTime: {
-          current: "6:47",
-          target: "6:00"
-        },
-        academicGoals: [
-          "Complete A+ & Net+ Certification"
-        ]
-      }
-    ];
-    // =========================================================================
-
     function renderCards() {
       const container = document.getElementById('team-container');
       container.innerHTML = '';
 
-      TEAM_DATA.forEach(member => {
+      TEAM_DATA.forEach((member, index) => {
         const card = document.createElement('article');
         card.className = 'member-card';
-
-        const verifiedBadge = member.isVerified
-          ? `<div style="text-align: right;">
-               <span class="badge badge-verified">✓ Verified</span>
-               <div style="font-size: 0.65rem; color: var(--text-muted); margin-top: 2px;">${member.verifiedDate}</div>
-             </div>`
-          : `<span class="badge badge-unverified">Pending</span>`;
 
         const goalsHTML = member.academicGoals
           .map(goal => `<li>${goal}</li>`)
@@ -189,10 +79,10 @@
         card.innerHTML = `
           <div class="member-header">
             <div class="member-info">
-              <h2 class="member-name">${member.name}</h2>
-              <span class="member-checkpoint">${member.checkpoint}</span>
+              <a href="member.html?id=${index}" style="text-decoration: none;">
+                <h2 class="member-name">${member.name} →</h2>
+              </a>
             </div>
-            ${verifiedBadge}
           </div>
 
           <div class="stats-grid">
