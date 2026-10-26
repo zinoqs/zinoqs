@@ -12,7 +12,7 @@
           target: 175
         },
         benchHistory: [
-          { cp: "Cycle 1", value: 135, verified: false, verifiedDate: "" }
+          { cp: "Cycle 1", value: 135, verified: true, verifiedDate: "23 Oct 2026" }
         ],
         benchMilestones: [
           { cp: "Cycle 3", period: "Month 1", target: 150 },
@@ -20,11 +20,11 @@
           { cp: "Cycle 7", period: "Month 3 (Jan 2027)", target: 175 }
         ],
         mileTime: {
-          current: "0:00",
+          current: "9:22",
           target: "8:00"
         },
         mileHistory: [
-          { cp: "Cycle 1", value: "0:00", verified: false, verifiedDate: "" }
+          { cp: "Cycle 1", value: "9:22", verified: true, verifiedDate: "26 Oct 2026" }
         ],
         mileMilestones: [
           { cp: "Cycle 3", period: "Month 1", target: "9:30" },
