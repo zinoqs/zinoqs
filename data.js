@@ -35,6 +35,11 @@
           "Complete A+ & Net+ Certification"
         ]
       },
+    
+    
+    
+    
+    
       {
         name: "Papa Pain",
         checkpoint: "Cycle 1",
@@ -66,6 +71,11 @@
           "Complete A+ & Net+ Certification"
         ]
       },
+    
+    
+    
+    
+    
       {
         name: "BvK",
         checkpoint: "Cycle 1",
@@ -97,6 +107,12 @@
           "Reach a total of 85% of degree plan"
         ]
       },
+    
+    
+    
+    
+    
+    
       {
         name: "Front Runner",
         checkpoint: "Cycle 1",
@@ -117,7 +133,7 @@
           target: "8:00"
         },
         mileHistory: [
-          { cp: "Cycle 1", value: "18:28", verified: true, verifiedDate: "23 OCT 2026" }
+          { cp: "Cycle 1", value: "9:57", verified: true, verifiedDate: "26 OCT 2026" }
         ],
         mileMilestones: [
           { cp: "Cycle 3", period: "Month 1", target: "14:00" },
@@ -128,6 +144,12 @@
           "Complete degree plan"
         ]
       },
+    
+    
+    
+    
+    
+    
       {
         name: "Kilo Watt",
         checkpoint: "Cycle 1",
@@ -159,6 +181,12 @@
           "Complete degree plan"
         ]
       },
+    
+    
+    
+    
+    
+    
       {
         name: "Big Wing",
         checkpoint: "Cycle 1",
