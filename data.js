@@ -113,7 +113,7 @@
           { cp: "Cycle 7", period: "Month 3 (Jan 2027)", target: 225 }
         ],
         mileTime: {
-          current: "18:28",
+          current: "9:57",
           target: "8:00"
         },
         mileHistory: [
